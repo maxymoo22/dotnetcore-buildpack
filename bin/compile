@@ -52,8 +52,9 @@ if [ -n "$(cat $PROJECT_FILE | grep 'netcoreapp2.0')" ]; then
 	echo "More info https://github.com/jincod/dotnetcore-buildpack/issues/44" | indent
 fi
 
-echo "Adding NuGet source..."
-nuget sources Add -Name "DSharpPlus packages" -Source https://nuget.emzi0767.com/api/v3/index.json
+echo "Adding NuGet package from custom source..."
+dotnet add package DSharpPlus -s https://nuget.emzi0767.com/api/v3/index.json -v 4.0.0-nightly-00635
+
 export NUGET_PACKAGES="${CACHE_DIR}/nuget/cache"
 
 echo "publish ${PROJECT_FILE} for ${BUILD_CONFIGURATION}"
