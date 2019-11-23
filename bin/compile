@@ -54,6 +54,9 @@ fi
 
 echo "Adding NuGet package from custom source..."
 dotnet add package DSharpPlus -s https://nuget.emzi0767.com/api/v3/index.json -v 4.0.0-nightly-00635
+dotnet add package DSharpPlus.CommandsNext -s https://nuget.emzi0767.com/api/v3/index.json -v 4.0.0-nightly-00635
+dotnet add package DSharpPlus.Lavalink -s https://nuget.emzi0767.com/api/v3/index.json -v 4.0.0-nightly-00635
+dotnet add package DSharpPlus.VoiceNext -s https://nuget.emzi0767.com/api/v3/index.json -v 4.0.0-nightly-00635
 
 export NUGET_PACKAGES="${CACHE_DIR}/nuget/cache"
 
