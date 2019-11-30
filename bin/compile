@@ -59,7 +59,9 @@ dotnet add package DSharpPlus.Lavalink -s https://nuget.emzi0767.com/api/v3/inde
 dotnet add package DSharpPlus.VoiceNext -s https://nuget.emzi0767.com/api/v3/index.json -v 4.0.0-nightly-00635
 
 echo "Installing opus and sodium binaries..."
-apt-get install libopus0 libsodium18 libopus-dev libsodium-dev
+#apt-get install libopus0 libsodium18 libopus-dev libsodium-dev
+apt-get update -y
+apt-get install -y libopus-dev libsodium-dev
 
 export NUGET_PACKAGES="${CACHE_DIR}/nuget/cache"
 
