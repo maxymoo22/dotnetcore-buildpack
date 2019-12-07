@@ -78,7 +78,7 @@ function installOpusAndSodium() {
   PROFILE_PATH="$1/.profile.d/opus.sh"
   OPUS_VERSION="1.3.1"
   
-  echo "exporting PATH and LIBRARY_PATH" | indent
+  echo "exporting PATH and LIBRARY_PATH" | otherIndentFunctionThingy
   mkdir -p $(dirname $PROFILE_PATH)
   
   echo 'export PATH="$PATH:$HOME/opus/bin"' >> $PROFILE_PATH
@@ -89,14 +89,14 @@ function installOpusAndSodium() {
   echo "-----> Building in $BUILD_DIR"
 
   echo "-----> Starting opus compilation"
-  echo "Downloading opus-$OPUS_VERSION.tar.gz" | indent
+  echo "Downloading opus-$OPUS_VERSION.tar.gz" | otherIndentFunctionThingy
   wget --quiet https://archive.mozilla.org/pub/opus/opus-$OPUS_VERSION.tar.gz
-  echo "Unpacking opus" | indent
+  echo "Unpacking opus" | otherIndentFunctionThingy
   tar -xf opus-$OPUS_VERSION.tar.gz
   cd opus-$OPUS_VERSION
-  echo "Running configure" | indent
+  echo "Running configure" | otherIndentFunctionThingy
   ./configure --prefix="$BUILD_DIR" >/dev/null 2>&1
-  echo "Running make install" | indent
+  echo "Running make install" | otherIndentFunctionThingy
   make install >/dev/null 2>&1
   
   
